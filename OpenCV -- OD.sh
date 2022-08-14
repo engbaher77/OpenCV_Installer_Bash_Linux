@@ -1,38 +1,4 @@
-OpenCV -- OD
---------------
-
-sudo sed -i 's/OD_OPTIMIZER=.*/OD_OPTIMIZER=OpenCV-DNN/' .env
-sudo sed -i 's/od_optimizer=.*/od_optimizer=opencv/' .env
-
-
-
-OpenVINO -- OD
-----------------
-
-sudo sed -i 's/OD_OPTIMIZER=.*/OD_OPTIMIZER=OpenVINO/' .env
-sudo sed -i 's/od_optimizer=.*/od_optimizer=openvino/' .env
-
-
------------------------------------------------------------------------
-----------------------------------------------------------------------
-
-OpenCV -- LPR
---------------
-
-sudo sed -i 's/LPR_OPTIMIZER=.*/LPR_OPTIMIZER=OpenCV-DNN/' .env
-sudo sed -i 's/lpr_optimizer=.*/lpr_optimizer=opencv/' .env
-
-
-
-OpenVINO -- OD
-----------------
-
-sudo sed -i 's/LPR_OPTIMIZER=.*/LPR_OPTIMIZER=OpenVINO/' .env
-sudo sed -i 's/lpr_optimizer=.*/lpr_optimizer=openvino/' .env
-
-
--------------------------------------------------------------------
-
+#!/bin/bah
 apt-install python3-pip
 
 sudo apt-get update \
@@ -56,13 +22,8 @@ sudo apt-get update \
         qtdeclarative5-dev \
         libgtk2.0-dev \
         pkg-config 
-        # libopenexr-dev \
-        # libavutil-dev \
-        # libavfilter-dev \
-        # libavresample-dev \
 
-        
-    pip3 install numpy==1.19.5
+    pip3 install numpy
     wget -q https://github.com/opencv/opencv/archive/4.5.1.zip -O opencv.zip
     wget -q https://github.com/opencv/opencv_contrib/archive/4.5.1.zip -O contrib.zip
     unzip -qq opencv.zip -d /opt
@@ -75,7 +36,6 @@ sudo apt-get update \
     cd opencv
     mkdir release
     cd release
-
 
     cmake \
         -D WITH_QT=ON .. \
